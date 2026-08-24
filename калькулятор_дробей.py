@@ -61,9 +61,6 @@ def calk():
         num3.config(text=n)
         den3.config(text=d)
 
-
-
-
     except Exception:
         pass
 
