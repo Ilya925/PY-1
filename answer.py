@@ -1,5 +1,5 @@
 def main(expression):
-    a = []
+    a = [] * 4
     b = []
     c = []
     temp = expression
