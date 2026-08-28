@@ -29,7 +29,9 @@
 #     l[i] = l[i - 1]
 # l[0] = temp
 # print(l)
-
+l = [22, 33, 44, 55, 99]
+n = len(l)
 for i in range(n - 1, 0, -1):
     l[i], l[i - 1] = l[i - 1], l[i]
     pass
+print(l)
