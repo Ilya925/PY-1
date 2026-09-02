@@ -1,2 +1,2 @@
-Буденный сИДОРОВ аНдРееВ
-СиДОРКИН сидоревич
+Ivanov,Ivan,Ivanovich,33,male
+Svetova,Svetlana,Petrovna,31,female
