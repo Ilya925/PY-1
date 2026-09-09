@@ -64,7 +64,7 @@ class Student(People):
         if not isinstance(value, int):
             raise TypeError('Тип данных должен быть целым числом')
         if  value < 1 or value > Student.vuzs[self.__vuz]:
-            raise ValueError('Значение вне диапазона')
+            raise ValueError(f'Значение {value} вне диапазона 1<=v<=4')
         self.__rang = value
 
 
@@ -86,7 +86,7 @@ if __name__ == '__main__':
     p1.name = 'John'
     print(p1)
     std1 = Student('Alex', 19, 'MГУ', 1, 'male')
-    std2 = Student('Glasha', 19, 'MГПУ', 6)
+    std2 = Student('Glasha', 19, 'MГПУ', 3)
     print(std1)
     print(isinstance(std1, People))
     print(isinstance(std1, Student))
@@ -94,5 +94,5 @@ if __name__ == '__main__':
     print(std2.vuzs)
     print(Student.vuzs)
     print(std2)
-    std2.rang=6
+    std2.rang=4
     print(std2)
