@@ -20,17 +20,25 @@ from декораторы import time_run, null, in_out
 # r1()
 # r2()
 
-@time_run
-def etalon(n, m, x):
-    print('START')
-    time.sleep(n+m)
-    print(x)
+# @time_run
+# def etalon(n, m, x):
+#     print('START')
+#     time.sleep(n+m)
+#     print(x)
+#
+# # etalon(3, 1, x=10)
+# @in_out
+# def summer(x, y):
+#     return x + y
+#
+# res = summer(random.randint(1, 100),
+#              random.randint(1, 100)) / 3.45 ** 3
+# print(res)
 
-# etalon(3, 1, x=10)
-@in_out
-def summer(x, y):
-    return x + y
+from dataclasses import dataclass
 
-res = summer(random.randint(1, 100),
-             random.randint(1, 100)) / 3.45 ** 3
-print(res)
+d = {'key1': {'key1':'info1',
+              'key2':'info2'}
+     }
+
+print(d['key1'].get('key3'))
