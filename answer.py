@@ -1,5 +1,6 @@
 import random
 import time
+import requests
 
 from декораторы import time_run, null, in_out
 
@@ -36,9 +37,19 @@ from декораторы import time_run, null, in_out
 # print(res)
 
 from dataclasses import dataclass
+#
+# d = {'key1': {'key1':'info1',
+#               'key2':'info2'}
+#      }
+#
+# print(d['key1'].get('key3'))
 
-d = {'key1': {'key1':'info1',
-              'key2':'info2'}
-     }
-
-print(d['key1'].get('key3'))
+try:
+    res = requests.get(
+        "http://127.0.0.1:8000/items/78?q='text'" )
+    res.raise_for_status()
+    res = res.json()
+    print(res.get('first_response'))
+    print(res.get('q'))
+except Exception as e:
+    print(f' {e}')
