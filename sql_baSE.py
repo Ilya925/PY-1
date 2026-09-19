@@ -33,4 +33,7 @@ SELECT name, year FROM car WHERE year LIKE '202_' ;
 SELECT name, year FROM car WHERE year LIKE '20%'  AND name = 'Toyota';
 SELECT DISTINCT name FROM car ;
 SELECT name, year FROM car ORDER BY name DESC, year DESC;
+SELECT * FROM (SELECT * FROM persone WHERE name = 'Piter') as nmn JOIN car ON nmn.id = car.persone_id
+SELECT name, MAX(cnt) FROM car
+SELECT name, year FROM car ORDER BY name DESC, year DESC LIMIT 1, 3
 """
