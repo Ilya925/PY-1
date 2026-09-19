@@ -34,3 +34,4 @@ if __name__ == '__main__':
     p_producer.join()
     p_consumer.join()
     print('Главный процесс завершен!')
+
