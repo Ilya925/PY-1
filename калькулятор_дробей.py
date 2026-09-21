@@ -2,6 +2,22 @@ import math
 from tkinter import *
 
 
+def validation_func_num(vidjet):
+    text = vidjet.get().strip()
+    corr_text = ''.join(symbl for symbl in text if symbl in "0123456789")
+    if corr_text != text:
+        vidjet.delete(0, 'end')
+        vidjet.insert(0, corr_text)
+
+
+def validation_func_oper(vidjet):
+    text = vidjet.get().strip()
+    corr_text = ''.join(symbl for symbl in text if symbl in "+-/*")
+    if corr_text != text:
+        vidjet.delete(0, 'end')
+        vidjet.insert(0, corr_text)
+
+
 def add(n1,d1, n2, d2):
     n = n1 * d2 + n2 * d1
     d = d1 * d2
@@ -112,5 +128,15 @@ line3.grid(row=1, column=5)
 den3 = Label(frame, width=2, bg='light gray')
 den3.config(font='Arial 15', justify='center')
 den3.grid(row=2, column=5)
+
+# num1.bind('<KeyRelease>', lambda event: validation_func_num(num1))
+# den1.bind('<KeyRelease>', lambda event: validation_func_num(den1))
+# num2.bind('<KeyRelease>', lambda event: validation_func_num(num2))
+# den2.bind('<KeyRelease>', lambda event: validation_func_num(den2))
+
+vidjets = (num1, den1, num2, den2)
+for v in vidjets:
+    v.bind('<KeyRelease>', lambda event, w=v: validation_func_num(w))
+oper.bind('<KeyRelease>', lambda event: validation_func_oper(oper))
 
 root.mainloop()
