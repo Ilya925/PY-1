@@ -92,4 +92,12 @@ def main(n, m):
         print(password)
 
 
-main(20, 15)
+# main(20, 15)
+
+
+# pattern = r'^\+\d-\d{3}-\d{3}-\d{2}-\d{2}$'
+# pattern = r'^\d{11}$'
+pattern = r'^79\d{9}$'
+number = '+7-978-908-12-34'
+number = number.replace('-', '').replace('+', '')
+print(re.findall(pattern, number))
